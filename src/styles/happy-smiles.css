@@ -1,0 +1,324 @@
+/* ===============================
+   HAPPY SMILES – SECTION BASE
+   =============================== */
+
+.happy-smiles {
+  position: relative;
+  padding: 6rem 0;
+  background: linear-gradient(to bottom, #ffffff, #fff7e6);
+  overflow: hidden;
+}
+
+.happy-smiles .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* ===============================
+   HEADINGS
+   =============================== */
+
+.eyebrow {
+  display: inline-block;
+  background: #fde68a;
+  color: #92400e;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.happy-smiles h2 {
+  margin-top: 1rem;
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.sub {
+  max-width: 620px;
+  margin: 0.75rem auto 3rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===============================
+   MARQUEE ROWS
+   =============================== */
+
+.marquee {
+  overflow: hidden;
+  margin: 1.8rem 0;
+}
+
+.track {
+  display: flex;
+  gap: 1.5rem;
+  width: max-content;
+}
+
+.marquee-left .track {
+  animation: scrollLeft 32s linear infinite;
+}
+
+.marquee-right .track {
+  animation: scrollRight 34s linear infinite;
+}
+
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* Pause on hover */
+.marquee:hover .track {
+  animation-play-state: paused;
+}
+
+/* ===============================
+   SMILE CARD – BASE
+   =============================== */
+
+.smile-card {
+  position: relative;
+  flex-shrink: 0;
+  background: transparent;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: none;
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.smile-card:hover {
+  transform: translateY(-8px);
+  box-shadow: none;
+}
+
+/* ===============================
+   CARD SIZE VARIANTS (KEY FIX)
+   =============================== */
+
+/* Default landscape */
+.smile-card.normal {
+  width: 340px;
+  height: 240px;
+}
+
+/* Wide feature card */
+.smile-card.wide {
+  width: 430px;
+  height: 240px;
+}
+
+/* Square style */
+.smile-card.square {
+  width: 260px;
+  height: 240px;
+}
+
+/* ===============================
+   IMAGE / VIDEO
+   =============================== */
+
+.smile-card img,
+.smile-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===============================
+   INFO OVERLAY
+   =============================== */
+
+.smile-card .info {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 14px 16px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.2),
+    transparent
+  );
+  text-align: left;
+  color: #ffffff;
+}
+
+.smile-card .info h4 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.smile-card .info span {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+/* ===============================
+   VIDEO CARD INDICATOR
+   =============================== */
+
+.video-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.05)
+  );
+  pointer-events: none;
+}
+
+.play-badge {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* ===============================
+   FLOATING PARTICLES
+   =============================== */
+
+.smile-particles span {
+  position: absolute;
+  font-size: 22px;
+  opacity: 0.25;
+  animation: float 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.smile-particles span:nth-child(1) {
+  top: 18%;
+  left: 8%;
+}
+
+.smile-particles span:nth-child(2) {
+  top: 62%;
+  left: 82%;
+  animation-delay: 1.5s;
+}
+
+.smile-particles span:nth-child(3) {
+  top: 82%;
+  left: 28%;
+  animation-delay: 3s;
+}
+
+.smile-particles span:nth-child(4) {
+  top: 28%;
+  left: 68%;
+  animation-delay: 4.5s;
+}
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+/* ===============================
+   RESPONSIVE TWEAKS
+   =============================== */
+
+@media (max-width: 768px) {
+  .happy-smiles h2 {
+    font-size: 2rem;
+  }
+
+  .smile-card.normal,
+  .smile-card.wide {
+    width: 300px;
+    height: 200px;
+  }
+
+  .smile-card.square {
+    width: 220px;
+    height: 200px;
+  }
+}
+
+
+
+
+/* ===============================
+   VIDEO MODAL
+   =============================== */
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+}
+
+.video-box {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 90%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 16px;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+}
+
+.video-box iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* close button */
+.close-btn {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  background: #fff;
+  color: #000;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* clickable video thumb */
+.video-thumb {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}

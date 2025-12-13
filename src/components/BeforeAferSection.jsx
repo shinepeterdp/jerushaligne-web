@@ -231,8 +231,6 @@ export default function BeforeAfter({
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#contact" className="inline-flex items-center px-4 py-2 rounded-full bg-amber-500 text-white font-semibold shadow hover:scale-[1.01] transition">Book Consultation</a>
 
-              <button onClick={() => setPosition(88)} className="inline-flex items-center px-4 py-2 rounded-full bg-white border text-gray-800 shadow hover:bg-amber-50 transition">View Full Gallery</button>
-
               {demo && (
                 <button
                   onClick={() => setIsPlaying((s) => !s)}

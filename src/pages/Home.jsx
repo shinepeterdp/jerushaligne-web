@@ -12,6 +12,7 @@ import WhatsAppButton from "../components/WhatsAppButton";
 import DentalChatbot from "../components/DentalChatbot";
 import BeforeAfterSection from "../components/BeforeAferSection";
 import TreatmentsSection from "../components/TreatmentsSection";
+import HappySmilesSection from "../components/HappySmilesSection";
 
 
 export default function Home() {
@@ -31,6 +32,7 @@ export default function Home() {
         <AboutSection />
         <DoctorsCarousel />
         <TreatmentsSection />
+        <HappySmilesSection />
         
       <BeforeAfterSection
       beforeSrc="Images/dental-aligns/before.jpg"
