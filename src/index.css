@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Figtree", sans-serif;
+}
+
+/* hide horizontal scrollbar visually but keep scrolling/dragging */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+  height: 0;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+
+/* keep existing no-scrollbar rules */
+.no-scrollbar::-webkit-scrollbar { display: none; height: 0; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* entrance animation utility (slight lift + fade) */
+/* Already handled with Tailwind classes + transition, but add this for fallback/consistency */
+section[aria-label="Our Doctors"] {
+  will-change: transform, opacity;
+}
+
+/* Arrow button polished effects */
+.arrow-btn {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  box-shadow: 0 6px 12px rgba(12, 12, 12, 0.06);
+}
+
+/* subtle pulsing halo */
+.arrow-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  pointer-events: none;
+  box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.18);
+  transition: box-shadow 400ms ease;
+  z-index: -1;
+}
+.arrow-btn:hover::after {
+  box-shadow: 0 10px 30px rgba(250, 204, 21, 0.12);
+}
+
+/* focus ring: accessible */
+.arrow-btn:focus {
+  outline: none;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.12);
+}
+
+/* small bounce/pulse animation for the arrows to draw attention */
+@keyframes arrow-pulse {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+  100% { transform: translateY(0); }
+}
+.arrow-btn.pulse { animation: arrow-pulse 1500ms ease-in-out infinite; }
+
+/* ensure images don't overflow parent and cards have consistent heights */
+.doctor-card-img { object-fit: cover; height: 100%; width: 100%; }
+
+/* optional: smoother snap */
+.container-snap {
+  scroll-snap-type: x mandatory;
+}
