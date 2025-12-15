@@ -137,7 +137,7 @@ const topRowSmiles = [
     name: "Priya R",
     treatment: "Smile Correction",
     type: "image",
-    img: "/images/happy-smiles.vishwa.jpg",
+    img: "/images/happy-smiles/vishwa.jpg",
     size: "normal",
   },
   {
