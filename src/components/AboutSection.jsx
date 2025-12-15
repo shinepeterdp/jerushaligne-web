@@ -17,7 +17,7 @@ import React from "react";
 export default function AboutSection({
   title = "About Jerushaligne",
   text = "We combine advanced dental technology and thoughtful patient care to deliver exceptional results. Our team focuses on comfort, precision and long-lasting outcomes.",
-  image = "/images/about.jpg",
+  image = "./images/about.jpg",
   headerImage = null, // NEW: render an image instead of the textual title when provided
   headerImageAlt = "Jerushaligne clinic",
 }) {
