@@ -1,12 +1,6 @@
 // NavBar.jsx
 import React, { useState, useRef, useEffect } from "react";
 
-/**
- * NavBar.jsx — gradient CTA + pastel quick-links
- *
- * Drop-in replacement. Uses Tailwind utility classes.
- * Quick-links: if item.title contains " — " it will split into label/value.
- */
 
 const DEFAULT_QUICK_LINKS = {
   title: "Quick Links",
@@ -18,6 +12,7 @@ const DEFAULT_QUICK_LINKS = {
   ],
 };
 
+
 const MENU = [
   {
     id: "discover",
@@ -26,7 +21,7 @@ const MENU = [
       {
         title: "Overview",
         items: [
-          { title: "Overview", href: "#" },
+          { title: "About", href: "/about" },
           { title: "Vision & Mission", href: "#" },
           { title: "Jerush Anthem", href: "#" },
           { title: "Leadership", href: "#" },
@@ -63,11 +58,7 @@ const MENU = [
 
     ],
   },
-  {
-    id: "library",
-    label: "Health Library",
-    href: "/library",
-  },
+
 ];
 
 export default function NavBar() {
