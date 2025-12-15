@@ -35,8 +35,8 @@ export default function Home() {
         <HappySmilesSection />
         
       <BeforeAfterSection
-      beforeSrc="Images/dental-aligns/before.jpg"
-      afterSrc="Images/dental-aligns/after.jpg"
+      beforeSrc="images/dental-aligns/after.jpg"
+      afterSrc="images/dental-aligns/before.jpg"
       patientName="S. Kumar"
       procedure="Clear Aligner Treatment"
       date="Aug 2025"

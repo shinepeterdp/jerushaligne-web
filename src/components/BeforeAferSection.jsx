@@ -307,7 +307,6 @@ export default function BeforeAfter({
             {/* caption */}
             <figcaption className="mt-3 text-sm text-gray-600">
               {patientName} — {procedure}. {date ? `Completed: ${date}.` : ""}
-              <span className="hidden"> Photo credit: Jerushaligne Dental</span>
             </figcaption>
           </div>
         </div>

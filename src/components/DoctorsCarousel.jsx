@@ -1,6 +1,4 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
-import binila from "../assets/images/home/hero/binila-dr.png";
-import bladbin from "../assets/images/home/hero/bladbin-dr.png";
 
 export default function DoctorsCarousel({
   doctors = sampleDoctors,
@@ -280,8 +278,8 @@ export default function DoctorsCarousel({
    sample data
    -------------------------- */
 const sampleDoctors = [
-  { id: 1, name: "Dr. Bladbin", role: "Chief Dental Specialist", img: bladbin},
-  { id: 2, name: "Dr. Binila", role: "Cosmetic Specialist", img: binila },
+  { id: 1, name: "Dr. Bladbin", role: "Chief Dental Specialist", img: "/images/hero/bladbin-dr.png"},
+  { id: 2, name: "Dr. Binila", role: "Cosmetic Specialist", img: "/images/hero/binila-dr.png" },
   { id: 3, name: "Dr. Maria Lopez", role: "Cosmetic Dentist", img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=1200&auto=format&fit=crop" },
   { id: 4, name: "Dr. Li Wei", role: "Orthodontist", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" },
   { id: 5, name: "Dr. Li Wei", role: "Orthodontist", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" },

@@ -3,10 +3,6 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import GradientButton from "./GradientButton";
 import "../styles/hero.css";
 
-import binila from "../assets/images/home/hero/binila-dr.png";
-import bladbin from "../assets/images/home/hero/bladbin-dr.png";
-import team from "../assets/images/home/hero/team.jpg";
-
 export default function Hero({
   eyebrow = "Premium Dental Care",
   title = "Bright smiles. Gentle care.",
@@ -107,7 +103,7 @@ export default function Hero({
 }
 
 const defaultSlides = [
-  { id: "1", img: binila },
-  { id: "2", img: bladbin },
-  { id: "3", img: team },
+  { id: "1", img: "/images/hero/binila-dr.png" },
+  { id: "2", img: "/images/hero/bladbin-dr.png" },
+  { id: "3", img: "/images/hero/team.jpg" },
 ];

@@ -156,7 +156,7 @@ export default function NavBar() {
             <a href="/" className="flex items-center gap-3">
               {/* LOGO IMAGE */}
               <img
-                src="Images/jerushalign-logo.png"   // <-- update your logo path
+                src="images/jerushalign-logo.png"   // <-- update your logo path
                 alt="Jerushaligne Logo"
                 className="w-40 h-10 object-contain rounded-md"
               />
@@ -304,7 +304,7 @@ function MobileDrawer({ onClose, menu }) {
             <a href="/" className="flex items-center gap-3">
               {/* LOGO IMAGE */}
               <img
-                src="Images/jerushalign-logo.png"   // logo path
+                src="images/jerushalign-logo.png"   // logo path
                 alt="Jerushaligne Logo"
                 className="w-40 h-10 object-contain rounded-md"
               />

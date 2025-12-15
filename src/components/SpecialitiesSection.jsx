@@ -1,6 +1,5 @@
 // SpecialitiesSection.jsx
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import dentalFillings from "../assets/images/home/treatments/dental/dental-fillings.png";
 import GradientButton from "./GradientButton";
 
 /**
@@ -423,7 +422,7 @@ const defaultItems = [
     title: "Dental Fillings",
     excerpt: "High quality tooth-coloured fillings.",
     top: ["Composite", "Amalgam"],
-    img: dentalFillings,
+    img: "/images/treatments/dental/dental-fillings.png",
     cta1: "Book Now",
     cta1Href: "#book",
   },
