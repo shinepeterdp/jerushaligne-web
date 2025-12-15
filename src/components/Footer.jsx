@@ -13,7 +13,7 @@ export default function Footer({
 <div className="flex flex-col">
   <a href="/" className="flex justify-start">
     <img
-      src="Images/footer-logo.png"
+      src="/images/footer-logo.png"
       alt="Jerushaligne Dental Logo"
       className="w-56 h-auto object-contain"
     />
