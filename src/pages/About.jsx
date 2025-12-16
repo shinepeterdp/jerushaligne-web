@@ -40,7 +40,7 @@ export default function About() {
 
           <div className="rounded-2xl overflow-hidden shadow-lg">
             <img
-              src="/images/about-clinic.jpg"
+              src="/images/about.jpg"
               alt="Jerushaligne Dental Clinic"
               className="w-full h-full object-cover"
             />

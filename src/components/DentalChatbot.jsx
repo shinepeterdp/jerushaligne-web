@@ -113,14 +113,14 @@ export default function DentalChatbot({ openAiKey = null, clinic = { name: "Jeru
   return (
     <>
       {/* Floating button */}
-      <div style={{ position: "fixed", right: 20, bottom: 20, zIndex: 9999 }}>
+      <div style={{ position: "fixed", left: 20, bottom: 20, zIndex: 9999 }}>
         <button
           onClick={() => setOpen((o) => !o)}
           aria-expanded={open}
           style={{
             background: "linear-gradient(90deg,#ffd54a,#ff9a2a)",
             borderRadius: 999,
-            padding: 12,
+            padding: 10,
             boxShadow: "0 8px 20px rgba(0,0,0,0.15)",
             border: "none",
             cursor: "pointer",
@@ -129,7 +129,7 @@ export default function DentalChatbot({ openAiKey = null, clinic = { name: "Jeru
         >
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ fontWeight: 700, color: "#111" }}>Jerush Assistant</span>
-            <span style={{ width: 50, height: 50, fontSize: 40, borderRadius: 999, background: "#fff", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
+            <span style={{ width: 40, height: 40, fontSize: 33, borderRadius: 999, background: "#fff", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
               👨🏻‍⚕️
             </span>
           </div>
@@ -143,7 +143,7 @@ export default function DentalChatbot({ openAiKey = null, clinic = { name: "Jeru
           aria-label="Dental assistant chat"
           style={{
             position: "fixed",
-            right: 20,
+            left: 20,
             bottom: 86,
             width: 360,
             maxWidth: "calc(100% - 40px)",

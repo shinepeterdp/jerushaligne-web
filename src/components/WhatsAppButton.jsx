@@ -16,7 +16,7 @@ import React from "react";
 export default function WhatsAppButton({
   phone = "+919876543210",
   message = "Hi! I found your site and would like to know more about appointments.",
-  bottom = "30", // tailwind spacing units (eg. 6 -> bottom-6). Use px via style if needed.
+  bottom = "25", // tailwind spacing units (eg. 6 -> bottom-6). Use px via style if needed.
   right = "6",
   showBadge = false,
 }) {

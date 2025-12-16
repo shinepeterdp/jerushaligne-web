@@ -17,14 +17,13 @@ const DEFAULT_QUICK_LINKS = {
 const MENU = [
   {
     id: "discover",
-    label: "Discover Jerush",
+    label: "Discover Jerushaligne",
     columns: [
       {
         title: "Overview",
         items: [
           { title: "About", href: "/about" },
           { title: "Vision & Mission", href: "#" },
-          { title: "Jerush Anthem", href: "#" },
           { title: "Leadership", href: "#" },
         ],
       },
@@ -42,15 +41,15 @@ const MENU = [
   },
   {
     id: "find",
-    label: "Find Hospital",
+    label: "Find Our Treatments",
     columns: [
       { title: "By City", items: [{ title: "Chennai", href: "#" }, { title: "Bengaluru", href: "#" }] },
       { title: "By State", items: [{ title: "Tamil Nadu", href: "#" }, { title: "Kerala", href: "#" }] },
     ],
   },
   {
-    id: "services",
-    label: "Medical Services",
+    id: "treatments",
+    label: "Dental Treatments",
     columns: [
       { title: "Specialities", items: [{ title: "Cardiac", href: "#" }, { title: "Neurosciences", href: "#" }] },
       { title: "Programs", items: [{ title: "Cancer Care", href: "#" }, { title: "Transplants", href: "#" }] },
