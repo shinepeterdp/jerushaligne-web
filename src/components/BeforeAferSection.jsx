@@ -49,7 +49,7 @@ export default function BeforeAfterCarousel() {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <motion.div
@@ -57,7 +57,7 @@ export default function BeforeAfterCarousel() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mb-10"
+          className="mb-12"
         >
           <h2 className="text-3xl font-bold text-gray-900">
             Before & After – Patient Smiles
@@ -67,8 +67,8 @@ export default function BeforeAfterCarousel() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10 items-center">
-          {/* LEFT CONTENT */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* LEFT CONTENT – ENHANCED CARD */}
           <AnimatePresence mode="wait">
             <motion.div
               key={active}
@@ -76,35 +76,53 @@ export default function BeforeAfterCarousel() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 30 }}
               transition={{ duration: 0.5 }}
+              className="
+                relative
+                bg-gradient-to-br from-white to-amber-50
+                rounded-3xl
+                p-8
+                shadow-xl
+                border border-amber-100
+              "
             >
-              <p className="text-sm text-blue-600 font-medium mb-2">
-                Patient Result
+              {/* Accent bar */}
+              <div className="absolute left-0 top-8 h-16 w-1 bg-amber-400 rounded-full" />
+
+              <p className="text-sm font-semibold text-amber-600 mb-2 tracking-wide">
+                Patient Details
               </p>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
+
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
                 {patient.name}
               </h3>
 
-              <ul className="space-y-2 text-gray-700">
-                <li>
-                  <strong>Procedure:</strong> {patient.procedure}
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex gap-3">
+                  <span className="mt-2 w-2 h-2 rounded-full bg-amber-400" />
+                  <span>
+                    <strong>Procedure:</strong> {patient.procedure}
+                  </span>
                 </li>
-                <li>
-                  <strong>Completed:</strong> {patient.date}
+                <li className="flex gap-3">
+                  <span className="mt-2 w-2 h-2 rounded-full bg-amber-400" />
+                  <span>
+                    <strong>Completed:</strong> {patient.date}
+                  </span>
                 </li>
               </ul>
 
-              <div className="mt-6 flex gap-4">
+              {/* Trust Note */}
+              <div className="mt-5 text-sm text-gray-600 bg-white/70 rounded-xl p-4 border border-amber-100">
+                Images shared with patient consent. Individual results may vary.
+              </div>
+
+              {/* CTA */}
+              <div className="mt-6">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
-                  className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-full font-medium"
+                  className="bg-amber-500 hover:bg-amber-600 text-black px-6 py-3 rounded-full font-semibold shadow-md"
                 >
                   Book Consultation
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  className="border border-gray-300 px-6 py-3 rounded-full"
-                >
-                  View Details
                 </motion.button>
               </div>
             </motion.div>
@@ -118,7 +136,7 @@ export default function BeforeAfterCarousel() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.5 }}
-              className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-lg"
+              className="relative w-full h-[420px] rounded-2xl overflow-hidden shadow-xl"
             >
               {/* Before */}
               <img
@@ -141,7 +159,7 @@ export default function BeforeAfterCarousel() {
               </motion.div>
 
               {/* Before / After Buttons */}
-              <div className="absolute top-4 left-4 flex gap-2 z-10">
+              <div className="absolute inset-x-0 top-4 flex justify-between px-4 z-10">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   onClick={() => setSlider(0)}
@@ -149,6 +167,7 @@ export default function BeforeAfterCarousel() {
                 >
                   Before
                 </motion.button>
+
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   onClick={() => setSlider(100)}
@@ -165,7 +184,7 @@ export default function BeforeAfterCarousel() {
                 max="100"
                 value={slider}
                 onChange={(e) => setSlider(e.target.value)}
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] accent-yellow-400"
+                className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[90%] accent-amber-500 cursor-pointer"
               />
             </motion.div>
           </AnimatePresence>
@@ -173,10 +192,16 @@ export default function BeforeAfterCarousel() {
 
         {/* CONTROLS */}
         <div className="flex justify-end gap-3 mt-10">
-          <button onClick={prev} className="w-10 h-10 rounded-full border">
+          <button
+            onClick={prev}
+            className="w-10 h-10 rounded-full border hover:bg-amber-100"
+          >
             ←
           </button>
-          <button onClick={next} className="w-10 h-10 rounded-full border">
+          <button
+            onClick={next}
+            className="w-10 h-10 rounded-full border hover:bg-amber-100"
+          >
             →
           </button>
         </div>

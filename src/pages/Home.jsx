@@ -3,11 +3,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "../animations/motionPresets";
 
-import Hero from "../components/Hero";
+import HeroSlider from "../components/HeroSlider"
 import ServicesSection from "../components/ServicesSection";
 import AboutSection from "../components/AboutSection";
 import DoctorsCarousel from "../components/DoctorsCarousel";
-import SpecialitiesSection from "../components/SpecialitiesSection";
 import WhatsAppButton from "../components/WhatsAppButton";
 import BeforeAfterSection from "../components/BeforeAferSection";
 import TreatmentsSection from "../components/TreatmentsSection";
@@ -22,7 +21,7 @@ export default function Home() {
     >
       <main>
         {/* Hero already animated internally */}
-        <Hero />
+        <HeroSlider />
 
         {/* Services */}
         <motion.div
