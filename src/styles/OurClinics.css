@@ -14,7 +14,7 @@
   max-width: 1300px;
   margin: 0 auto;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
 }
 
 /* ── CARDS ── */
@@ -227,7 +227,7 @@
   font-size: 13px;
   font-weight: 600;
   color: #0d2137;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   cursor: pointer;
   white-space: nowrap;
   transition: border-color 0.2s ease, background 0.2s ease;
@@ -260,7 +260,7 @@
   border: none;
   background: none;
   font-size: 13px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   color: #374151;
   cursor: pointer;
   border-radius: 8px;
@@ -286,7 +286,7 @@
   font-weight: 700;
   color: #0d2137;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   white-space: nowrap;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 16px rgba(255, 215, 0, 0.35);
@@ -309,7 +309,7 @@
   font-weight: 600;
   color: #fff;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   backdrop-filter: blur(8px);
   background: rgba(255,255,255,0.08);
   transition: background 0.2s ease, border-color 0.2s ease;

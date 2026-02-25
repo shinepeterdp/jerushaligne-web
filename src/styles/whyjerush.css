@@ -773,7 +773,7 @@
   --cs-muted: #64748b;
   --cs-border: #dde4ed;
   --cs-radius: 16px;
-  --cs-font: 'Poppins', sans-serif;
+  --cs-font: 'montserrat', sans-serif;
 }
 
 .cs-section {
@@ -1199,7 +1199,7 @@
   position: relative;
   background: #111827;
   padding: 96px 0 80px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
@@ -1518,7 +1518,7 @@
   border: none;
   padding: 11px 24px;
   border-radius: 100px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
   cursor: pointer;
@@ -1805,7 +1805,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 100vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   overflow: hidden;
   width: 100%;
   box-sizing: border-box;
@@ -2025,7 +2025,7 @@
   border: none;
   padding: 14px 28px;
   border-radius: 100px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 0.88rem;
   font-weight: 700;
   cursor: pointer;
@@ -2045,7 +2045,7 @@
   color: rgba(255,255,255,0.65);
   padding: 13px 24px;
   border-radius: 100px;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;

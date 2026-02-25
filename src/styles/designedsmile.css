@@ -13,7 +13,7 @@
   align-items: center;
   overflow: hidden;
   padding: 80px 40px 100px;
-  font-family: 'poppins', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
 }
 
 /* ─────────────────────────────────────────
@@ -54,7 +54,7 @@
    HEADER
 ───────────────────────────────────────── */
 .ca-title {
-  font-family: 'poppins', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
   font-size: clamp(1.8rem, 4.5vw, 3.4rem);
   font-weight: 900;
   color: #653801;
@@ -171,7 +171,7 @@
 }
 
 .ca-card-title {
-  font-family: 'poppins', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
   font-size: 0.95rem;
   font-weight: 800;
   color: #1c0f00;
@@ -222,7 +222,7 @@
   bottom: 4%;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'poppins', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
   font-size: clamp(56px, 9vw, 110px);
   font-weight: 900;
   white-space: nowrap;

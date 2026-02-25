@@ -1,7 +1,7 @@
 /* ================= OUTLET SHOWCASE ================= */
 
 .outlet-showcase {
-  padding: 7rem 1.5rem 2rem;
+  padding: 4rem 1.5rem 2rem;
   background: #ffffff;
 }
 
@@ -354,7 +354,7 @@
   background: #080808;
   padding: 100px 0 120px;
   overflow: hidden;
-  font-family: 'poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
 }
 
 /* ===== BLOBS ===== */
@@ -406,7 +406,7 @@
 }
 
 .reviews-title {
-  font-family: 'Playfair Display', 'poppins', serif;
+  font-family: 'montserrat', serif;
   font-size: 45px;
   font-weight: 700;
   color: #fff;

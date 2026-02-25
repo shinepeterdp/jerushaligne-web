@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div
       className="min-h-screen bg-gray-50 text-gray-800"
-      style={{ fontFamily: "'poppins', sans-serif" }}
+      style={{ fontFamily: "'montserrat', sans-serif" }}
     >
       <main>
         {/* Hero already animated internally */}

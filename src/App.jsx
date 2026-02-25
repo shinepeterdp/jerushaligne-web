@@ -25,6 +25,7 @@ import BackToTopIcon from "./components/BacktoTopIcon";
 import FloatingSocialIcons from "./components/FloatingSocialIcons";
 
 
+
 function App() {
   const location = useLocation();
 
@@ -187,7 +188,7 @@ function App() {
 
       <FloatingSocialIcons />
 
-      <Footer />
+          <Footer />
     </>
   );
 }

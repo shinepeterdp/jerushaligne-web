@@ -24,7 +24,7 @@
 
 .bl-root {
   background: var(--bg);
-  font-family: 'poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   color: var(--dark);
   min-height: 100vh;
 }
@@ -74,7 +74,7 @@
 }
 
 .bl-hero-title {
-  font-family: 'poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 40px;
   font-weight: 900;
   color: var(--dark);
@@ -113,7 +113,7 @@
   border: 1.5px solid rgba(255,255,255,0.9);
   border-radius: 100px;
   padding: 12px 44px 12px 42px;
-  font-family: 'poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 0.9rem;
   color: var(--dark);
   outline: none;
@@ -189,7 +189,7 @@
   border: none;
   padding: 6px 14px;
   border-radius: 100px;
-  font-family: 'poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--soft);
@@ -225,7 +225,7 @@
   border: 1.5px solid var(--border);
   border-radius: 100px;
   padding: 7px 14px;
-  font-family: 'poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--mid);
@@ -260,7 +260,7 @@
   border: none;
   padding: 9px 12px;
   border-radius: 8px;
-  font-family: 'poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 0.83rem;
   color: var(--mid);
   cursor: pointer;
@@ -371,7 +371,7 @@
 }
 
 .bl-card-title {
-  font-family: 'poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   color: var(--dark);
@@ -425,7 +425,7 @@
   border: none;
   border-radius: 100px;
   padding: 10px 24px;
-  font-family: 'poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
@@ -458,7 +458,7 @@
   border-radius: 10px;
   border: 1.5px solid var(--border);
   background: var(--white);
-  font-family: 'poppins', sans-serif;
+  font-family: 'montserrat', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--mid);
@@ -498,6 +498,71 @@
   padding: 0 4px;
   user-select: none;
 }
+
+/* ── BLOG HERO META (date · read time · author) ── */
+.blog-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 20px;
+  padding: 0 0 16px 0;
+  border-bottom: 1.5px solid #f0e6ce;
+}
+
+.blog-hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── AUTHOR CHIP ── */
+.blog-author-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fffbee;
+  border: 1.5px solid #f0e6ce;
+  border-radius: 999px;
+  padding: 4px 14px 4px 4px;
+}
+
+.blog-author-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 2px solid #ffd700;
+  flex-shrink: 0;
+}
+
+.blog-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.blog-author-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  line-height: 1;
+}
+
+.blog-author-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1207;
+  line-height: 1;
+}
+
+
 
 /* ─────────────────────────────────────────
    RESPONSIVE — TABLET (≤1024px)

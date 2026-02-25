@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "../../../styles/BlogPage.css";
 
+
 const sections = [
   { id: "introduction", label: "How do Clear Aligners Fix?" },
   { id: "what-is-retainer", label: "What is a Retainer" },
@@ -131,28 +132,41 @@ export default function BlogPage() {
             Clear Aligners 01: How do Clear Aligners Fix an Overbite?
           </h1>
 
-          <p className="blog-hero-meta">
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
-                <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
-                <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-              Jan 15, 2026
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
-                <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/>
-                <path d="M12 7v5l3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-              8 min read
-            </span>
-            <span>
-              <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2M12 11a4 4 0 100-8 4 4 0 000 8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-              </svg>
-              Dr. Bladbin
-            </span>
-          </p>
+        {/* ── FIND THIS in your blog-hero-meta section and REPLACE with this ── */}
+
+<div className="blog-hero-meta">
+  <span>
+    <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+      <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+      <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+    Jan 15, 2026
+  </span>
+
+  <span>
+    <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/>
+      <path d="M12 7v5l3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+    8 min read
+  </span>
+
+  {/* ── AUTHOR WITH AVATAR ── */}
+  <span className="blog-author-chip">
+    <img
+      src="/images/doctors/dr-bladbin.png"
+      alt="Dr. Bladbin"
+      className="blog-author-avatar"
+      onError={(e) => {
+        e.target.src = "https://ui-avatars.com/api/?name=Dr+Bladbin&background=f59e0b&color=1a1207&rounded=true&size=48";
+      }}
+    />
+    <span className="blog-author-info">
+      <span className="blog-author-label">Reviewed by</span>
+      <span className="blog-author-name">Dr. Bladbin</span>
+    </span>
+  </span>
+</div>
 
           <div className="blog-hero-img">
             <img

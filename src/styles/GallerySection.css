@@ -1,5 +1,5 @@
 /* ─── Imports ──────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@300;400;500&display=swap');
 
 /* ─── Root Variables ────────────────────────────────────── */
 :root {
@@ -25,7 +25,7 @@
 .gallery-section {
   background: var(--bg);
   padding: 80px 0;
-  font-family: 'poppins', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
   color: var(--ink);
   overflow-x: hidden;
   width: 100%;
@@ -59,7 +59,7 @@
   border: none;
   padding: 12px 26px;
   border-radius: 100px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
   cursor: pointer;
@@ -123,7 +123,7 @@
   color: var(--ink-muted);
   padding: 8px 20px;
   border-radius: 100px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Playfair Display', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
   cursor: pointer;

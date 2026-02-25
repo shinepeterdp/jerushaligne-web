@@ -15,9 +15,9 @@
   --border:     #ede5d0;
   --border2:    #f5edda;
   --pill-bg:    #fdf4e0;
-  --syne:       'poppins', sans-serif;
-  --lora:       'poppins', serif;
-  --dm:         'poppins', sans-serif;
+  --syne:       'Playfair-Display', sans-serif;
+  --lora:       'Playfair-Display', sans-serif;
+  --dm:         'Playfair-Display', sans-serif;
   --ease:       cubic-bezier(0.22, 1, 0.36, 1);
   --shadow-sm:  0 1px 4px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
   --shadow-md:  0 8px 32px rgba(180,120,0,0.14), 0 2px 8px rgba(0,0,0,0.06);

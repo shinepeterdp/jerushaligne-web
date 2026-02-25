@@ -26,6 +26,7 @@ export default function Navbar() {
   const handleMobileNavClick = () => {
     setMobileOpen(false);
     setMobileAlignersOpen(false);
+    setMobileStoryOpen(false);
     setMobileOutletsOpen(false);
   };
 
@@ -41,26 +42,22 @@ export default function Navbar() {
           <nav className="nav-menu">
             <Link className={`nav-link ${isActive("/") ? "active" : ""}`} to="/">Home</Link>
 
-
-           <div className="dropdown">
+            <div className="dropdown">
               <button className="nav-link dropdown-trigger">
-                 Jerushaligne Story
+                Jerushaligne Story
                 <svg className="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               <div className="dropdown-content">
-                 <Link to="/story-of-jerushaligne" className={isActive("/story-of-jerushaligne") ? "active" : ""}>
+                <Link to="/story-of-jerushaligne" className={isActive("/story-of-jerushaligne") ? "active" : ""}>
                   <span className="dropdown-label">Story of Jerushaligne</span>
                 </Link>
-                
                 <Link to="/gallery-events" className={isActive("/gallery-events") ? "active" : ""}>
                   <span className="dropdown-label">Gallery Events</span>
                 </Link>
               </div>
             </div>
-
-             
 
             <div className="dropdown">
               <button className="nav-link dropdown-trigger">
@@ -121,7 +118,7 @@ export default function Navbar() {
       {/* ===== OVERLAY ===== */}
       {mobileOpen && <div className="overlay" onClick={() => setMobileOpen(false)} />}
 
-      {/* ===== CLOSE BUTTON — fixed to viewport, left of drawer ===== */}
+      {/* ===== CLOSE BUTTON ===== */}
       <button
         type="button"
         className="close-btn"
@@ -137,54 +134,84 @@ export default function Navbar() {
       {/* ===== MOBILE DRAWER ===== */}
       <aside className={`mobile-drawer ${mobileOpen ? "open" : ""}`}>
 
-        {/* HEADER — just the logo, centered */}
         <div className="mobile-header">
           <img src="/images/logo-black.png" alt="Jerushaligne" />
         </div>
 
-        {/* NAV */}
         <nav className="mobile-nav">
           <Link className={isActive("/") ? "active" : ""} to="/" onClick={handleMobileNavClick}>Home</Link>
 
-           <div className="mobile-accordion">
-            <button className={`accordion-trigger ${mobileStoryOpen ? "open" : ""}`} onClick={() => setMobileStoryOpen(!mobileStoryOpen)}>
+          {/* ── Jerushaligne Story ── */}
+          <div className="mobile-accordion">
+            <button
+              className={`accordion-trigger ${mobileStoryOpen ? "open" : ""}`}
+              onClick={() => setMobileStoryOpen(!mobileStoryOpen)}
+            >
               <span>Jerushaligne Story</span>
-              <svg className="chevron" width="16" height="16" viewBox="0 0 16 16" style={{ transform: mobileStoryOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
+              <svg className="chevron" width="16" height="16" viewBox="0 0 16 16"
+                style={{ transform: mobileStoryOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
                 <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
-            <div className={`accordion-content ${mobileAlignersOpen ? "open" : ""}`}>
-              <Link to="/story-of-jerushaligne" className={isActive("/story-of-jerushaligne") ? "active" : ""} onClick={handleMobileNavClick}>Story of Jeruhshaligne</Link>
-             
+            {/* ✅ FIXED: was mobileAlignersOpen, now correctly mobileStoryOpen */}
+            <div className={`accordion-content ${mobileStoryOpen ? "open" : ""}`}>
+              <Link to="/story-of-jerushaligne" className={isActive("/story-of-jerushaligne") ? "active" : ""} onClick={handleMobileNavClick}>
+                Story of Jerushaligne
+              </Link>
+              <Link to="/gallery-events" className={isActive("/gallery-events") ? "active" : ""} onClick={handleMobileNavClick}>
+                Gallery Events
+              </Link>
             </div>
           </div>
 
+          {/* ── Aligners ── */}
           <div className="mobile-accordion">
-            <button className={`accordion-trigger ${mobileAlignersOpen ? "open" : ""}`} onClick={() => setMobileAlignersOpen(!mobileAlignersOpen)}>
+            <button
+              className={`accordion-trigger ${mobileAlignersOpen ? "open" : ""}`}
+              onClick={() => setMobileAlignersOpen(!mobileAlignersOpen)}
+            >
               <span>Aligners</span>
-              <svg className="chevron" width="16" height="16" viewBox="0 0 16 16" style={{ transform: mobileAlignersOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
+              <svg className="chevron" width="16" height="16" viewBox="0 0 16 16"
+                style={{ transform: mobileAlignersOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
                 <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
             <div className={`accordion-content ${mobileAlignersOpen ? "open" : ""}`}>
-              <Link to="/clear-aligners" className={isActive("/clear-aligners") ? "active" : ""} onClick={handleMobileNavClick}>Clear Aligners</Link>
-              <Link to="/retainers" className={isActive("/retainers") ? "active" : ""} onClick={handleMobileNavClick}>Retainers</Link>
+              <Link to="/clear-aligners" className={isActive("/clear-aligners") ? "active" : ""} onClick={handleMobileNavClick}>
+                Clear Aligners
+              </Link>
+              <Link to="/retainers" className={isActive("/retainers") ? "active" : ""} onClick={handleMobileNavClick}>
+                Retainers
+              </Link>
             </div>
           </div>
 
-          <Link to="/why-jerushaligne-is-different" className={isActive("/why-jerushaligne-is-different") ? "active" : ""} onClick={handleMobileNavClick}>Why Jerushaligne</Link>
+          <Link to="/why-jerushaligne-is-different" className={isActive("/why-jerushaligne-is-different") ? "active" : ""} onClick={handleMobileNavClick}>
+            Why Jerushaligne
+          </Link>
 
+          {/* ── Our Outlets ── */}
           <div className="mobile-accordion">
-            <button className={`accordion-trigger ${mobileOutletsOpen ? "open" : ""}`} onClick={() => setMobileOutletsOpen(!mobileOutletsOpen)}>
+            <button
+              className={`accordion-trigger ${mobileOutletsOpen ? "open" : ""}`}
+              onClick={() => setMobileOutletsOpen(!mobileOutletsOpen)}
+            >
               <span>Our Outlets</span>
-              <svg className="chevron" width="16" height="16" viewBox="0 0 16 16" style={{ transform: mobileOutletsOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
+              <svg className="chevron" width="16" height="16" viewBox="0 0 16 16"
+                style={{ transform: mobileOutletsOpen ? "rotate(180deg)" : "rotate(0deg)" }}>
                 <path d="M4 6L8 10L12 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </button>
             <div className={`accordion-content ${mobileOutletsOpen ? "open" : ""}`}>
-              <Link to="/outlets/kanyakumari-outlet" className={isActive("/outlets/kanyakumari-outlet") ? "active" : ""} onClick={handleMobileNavClick}>Kanyakumari</Link>
-              <Link to="/outlets/trichy-outlet" className={isActive("/outlets/trichy-outlet") ? "active" : ""} onClick={handleMobileNavClick}>Trichy</Link>
-              <Link to="/outlets/chennai-outlet" className={isActive("/outlets/chennai-outlet") ? "active" : ""} onClick={handleMobileNavClick}>Chennai</Link>
+              <Link to="/outlets/kanyakumari-outlet" className={isActive("/outlets/kanyakumari-outlet") ? "active" : ""} onClick={handleMobileNavClick}>
+                Kanyakumari
+              </Link>
+              <Link to="/outlets/trichy-outlet" className={isActive("/outlets/trichy-outlet") ? "active" : ""} onClick={handleMobileNavClick}>
+                Trichy
+              </Link>
+              <Link to="/outlets/chennai-outlet" className={isActive("/outlets/chennai-outlet") ? "active" : ""} onClick={handleMobileNavClick}>
+                Chennai
+              </Link>
             </div>
           </div>
 
@@ -192,7 +219,6 @@ export default function Navbar() {
           <Link to="/contact-us" className={isActive("/contact-us") ? "active" : ""} onClick={handleMobileNavClick}>Contact Us</Link>
         </nav>
 
-        {/* CTA */}
         <div className="mobile-cta">
           <Link to="/contact-us" className="btn-primary" onClick={handleMobileNavClick}>Book Appointment</Link>
           <a href="tel:+919489160055" className="btn-secondary">Call Now</a>
