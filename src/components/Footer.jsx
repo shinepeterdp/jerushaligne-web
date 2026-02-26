@@ -10,8 +10,8 @@ export default function Footer() {
         <div className="footer-brand">
           <a href="/">
             <img
-              src="/images/footer-logo.png"
-              alt="Jerushaligne Dental"
+              src="/images/logo/footer-logo.png"
+              alt="Jerushaligne logo"
             />
           </a>
 

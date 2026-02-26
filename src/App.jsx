@@ -2,7 +2,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 
-import NavBar from "./components/Navbar";
+import Navbartwo from "./components/Navbartwo";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
@@ -36,7 +36,7 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <Navbartwo />
 
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
@@ -79,7 +79,7 @@ function App() {
           />
 
           <Route
-            path="/retainers"
+            path="/aligner-retainers"
             element={
               <PageTransition>
                 <Retainers />

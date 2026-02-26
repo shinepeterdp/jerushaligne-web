@@ -2,7 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadeUp } from "../animations/motionPresets";
 
-import HeroVideo from "../components/home/HeroVideo";
+// import HeroVideo from "../components/home/HeroVideo";
+import HeroSlider from "../components/home/HeroSlider";
 import ServicesSection from "../components/home/ServicesSection";
 import AboutSection from "../components/home/AboutSection";
 import BeforeAfterSection from "../components/home/BeforeAferSection";
@@ -23,7 +24,7 @@ export default function Home() {
     >
       <main>
         {/* Hero already animated internally */}
-        <HeroVideo />
+        <HeroSlider />
 
         {/* Services */}
         <motion.div

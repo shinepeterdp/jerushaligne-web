@@ -44,14 +44,14 @@ export default function Navbar() {
 
             <div className="dropdown">
               <button className="nav-link dropdown-trigger">
-                Jerushaligne Story
+                Jerushaligne's History 
                 <svg className="chevron" width="12" height="12" viewBox="0 0 12 12" fill="none">
                   <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
               <div className="dropdown-content">
-                <Link to="/story-of-jerushaligne" className={isActive("/story-of-jerushaligne") ? "active" : ""}>
-                  <span className="dropdown-label">Story of Jerushaligne</span>
+                <Link to="/history-of-jerushaligne" className={isActive("/story-of-jerushaligne") ? "active" : ""}>
+                  <span className="dropdown-label">History of Jerushaligne</span>
                 </Link>
                 <Link to="/gallery-events" className={isActive("/gallery-events") ? "active" : ""}>
                   <span className="dropdown-label">Gallery Events</span>

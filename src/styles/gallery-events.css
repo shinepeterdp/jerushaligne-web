@@ -39,7 +39,7 @@ body {
 .gal-header {
   background: linear-gradient(135deg, #fde68a, #facc15);
   border-bottom: 1px solid var(--border);
-  padding: 7rem 25rem 0 25rem;
+  padding: 9rem 25rem 0 25rem;
   display: flex;
   align-items: flex-end;        /* both children sit at the bottom */
   justify-content: space-between;
@@ -130,7 +130,7 @@ body {
 
 .gal-header-img img {
   /* width: 100%; */
-  height: 20rem;              /* slightly shorter so the top has breathing room */
+  height: 17rem;              /* slightly shorter so the top has breathing room */
   object-fit: cover;
   object-position: top center;
   display: block;

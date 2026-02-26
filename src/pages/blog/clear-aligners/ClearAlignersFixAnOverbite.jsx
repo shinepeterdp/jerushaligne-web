@@ -4,8 +4,8 @@ import "../../../styles/BlogPage.css";
 
 const sections = [
   { id: "introduction", label: "How do Clear Aligners Fix?" },
-  { id: "what-is-retainer", label: "What is a Retainer" },
-  { id: "why-retainer", label: "Why Retainer" },
+  { id: "causes", label: "Cause of an Overbite" },
+  { id: "technology", label: "Technology" },
   { id: "types-of-retainer", label: "Types of Retainer" },
   { id: "the-need", label: "The Need" },
   { id: "faq", label: "FAQs" },
@@ -262,49 +262,28 @@ export default function BlogPage() {
               </div>
             </div>
 
-            <p>
-              Retainers come in different types: <strong>Clear Retainers</strong>, which are invisible and easy to wear, or a <strong>permanent retainer</strong>, a thin wire which stays fixed behind your teeth for round-the-clock support. No matter which type, their purpose is the same — to protect the smile you worked so hard for.
-            </p>
           </section>
 
-          {/* ── WHAT IS A RETAINER ── */}
-          <section id="what-is-retainer" className="blog-section">
-            <h2 className="blog-h2">What Is a Retainer?</h2>
+          {/* ── CAUSES ── */}
+          <section id="causes" className="blog-section">
+            <h2 className="blog-h2">What is the Cause of an Overbite?</h2>
 
             <div className="blog-img-block">
               <img src="https://images.unsplash.com/photo-1588776814546-1ffbb3f5e39c?w=900&q=80" alt="Clear retainer" />
             </div>
 
             <p>
-              Teeth Retainers are used to maintain the corrected position of your teeth after your orthodontic treatment is completed. When you use clear aligners, a retainer ensures your smile stays straight and prevents teeth from shifting back to their original positions.
+              It is useful to learn about the causes of having an overbite before discussing the ways in which aligners can be used to correct the problem. 
+              This condition can be caused by a number of factors.
+
             </p>
 
-            <p>
-              Retainers can be removable or fixed, but their job remains the same: to maintain your results for the long term.
-            </p>
-
-           
-          </section>
-
-
-               <section id="why-retainer" className="blog-section">
-                 <h3 className="blog-h3">Why Your Dentist Swears By Retainers</h3>
-
-            <div className="blog-img-block">
-              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=80" alt="Dentist" />
-            </div>
-
-            <p>
-              Retainers are a custom-made orthodontic appliance designed to hold teeth in their new fixed position after aligner treatment is completed. Dentists insist on them because they consistently bring out positive results with a beautifully aligned smile.
-            </p>
-
-            <div className="numbered-list">
+           <div className="numbered-list">
               {[
-                { title: "Teeth Naturally Try to Shift Back", desc: "After orthodontic treatment, your teeth are still settling into their new positions. Without a retainer, they may slowly drift back. Retainers lock in your results and prevent unwanted movement." },
-                { title: "They Protect Your Investment", desc: "Straightening teeth with aligners is a commitment. A retainer ensures you don't lose the progress you worked so hard for. A few hours of wearing a retainer now saves you from corrective treatment later." },
-                { title: "Clear Retainers Are Comfortable & Invisible", desc: "Modern clear retainers are transparent, lightweight, and customised to fit snugly. Easy to wear, they deliver consistent, predictable retention." },
-                { title: "They Maintain Your Bite & Smile Symmetry", desc: "Beyond straight teeth, retainers help maintain bite alignment and jaw balance, preventing long-term issues like uneven wear, chipping, or discomfort." },
-                { title: "They Ensure Long-Term Oral Health", desc: "Properly aligned teeth are easier to clean, reducing the risk of cavities, gum problems, and plaque build-up." },
+                { title: "Genetics", desc: "Tooth alignment and shape of the jaw tend to be familial. Certain individuals have certain innate jaw constructions that make them bite deeper." },
+                { title: "Childhood Habits", desc: "Childhood habits of thumb sucking, use of pacifiers over an extended period or tongue thrusting can cause the teeth to be pushed forward and affect the shape of the bite." },
+                { title: "Missing or Crowded Teeth", desc: "In case of crowded or missing teeth the bite can deviate and give too much overlap." },
+                { title: "Differences in the Development of the Jaws", desc: "In other cases, the upper jaw can develop at a different rate than the lower jaw giving it a more profound bite. The concept of the underlying cause assists orthodontists in creating a more accurate aligner treatment plan." },
               ].map((item, i) => (
                 <div key={i} className="numbered-item">
                   <div className="numbered-badge">{i + 1}</div>
@@ -315,6 +294,41 @@ export default function BlogPage() {
                 </div>
               ))}
             </div>
+
+           
+          </section>
+                 {/* ── TECHNOLOGY ── */}
+               <section id="technology" className="blog-section">
+                 <h3 className="blog-h3">The Technology of Clear Aligner Tooth Movement</h3>
+
+            <div className="blog-img-block">
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=80" alt="Dentist" />
+            </div>
+
+            <p>
+              Clear aligners are based on forceful, slow force that helps in moving teeth into a more favorable position. 
+              The aligner trays are individually customized based on digital images of the mouth of a patient.
+            </p>
+
+            <p>The following is the way the process usually works:</p>
+
+            <div className="numbered-list">
+              {[
+                { desc: "With the help of 3D imaging technology, a dentist or an orthodontist scans the teeth." },
+                { desc: "An electronic treatment plan shows every step of the movement of teeth." },
+                { desc: "A set of aligners is produced such that each tray is slightly varied from the one before it." },
+                { desc: "The patient also changes to another aligner after every 2 weeks, as the teeth slowly change." },
+              ].map((item, i) => (
+                <div key={i} className="numbered-item">
+                  <div className="numbered-badge">{i + 1}</div>
+                  <div>
+                    <strong>{item.title}</strong>
+                    <p>{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+             <p>This controlled movement over time is useful in correcting the size and placement of the teeth besides the bite.</p>
                 </section> 
 
 

@@ -20,7 +20,7 @@ export default function TreatmentComparison() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Jerushaligne vs Other Online Aligners
+          Jerushaligne vs Other Aligners
         </motion.h3>
 
         {/* SUBTITLE */}
@@ -105,7 +105,7 @@ export default function TreatmentComparison() {
             viewport={{ once: true }}
             whileHover={{ y: -10 }}
           >
-            <h3>Other Online Aligners</h3>
+            <h3>Other Aligners</h3>
 
             <ul>
               <li>Only cosmetic corrections</li>

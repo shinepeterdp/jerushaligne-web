@@ -34,7 +34,7 @@
 ───────────────────────────────────────── */
 .bl-hero {
   background: linear-gradient(150deg, #fde68a 0%, #facc15 50%, #f59e0b 100%);
-  padding: 90px 24px 56px;
+  padding: 160px 24px 56px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -584,7 +584,7 @@
    RESPONSIVE — MOBILE (≤640px)
 ───────────────────────────────────────── */
 @media (max-width: 640px) {
-  .bl-hero { padding: 48px 16px 40px; }
+  .bl-hero { padding: 90px 16px 40px; }
   .bl-main { padding: 24px 16px 60px; }
   .bl-filterbar { padding: 0 12px; }
   .bl-filterbar-inner { height: 52px; }

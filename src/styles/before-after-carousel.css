@@ -1,145 +1,455 @@
-.before-after {
-  padding: 5rem 1.5rem;
-  background: linear-gradient(to bottom, #ffffff, #f8fafc);
-}
+/* ============================================
+   BEFORE / AFTER CAROUSEL
+   Palette: cream bg #fffbee | amber #f59e0b
+             gold #facc15 | dark #1f2937
+   Everything center-aligned. Full width.
+   ============================================ */
 
-.before-after-container {
-  max-width: 1300px;
-  margin: auto;
-}
-
-/* HEADER */
-.before-after-header {
-  margin-bottom: 3rem;
-}
-
-.before-after-header h3 {
-  font-size: 32px;
-  font-weight: 800;
-  color: #111827;
-}
-
-.before-after-header p {
-  color: #6b7280;
-  margin-top: 0.5rem;
-  max-width: 600px;
-}
-
-/* GRID */
-.before-after-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-/* PATIENT CARD */
-.patient-card {
-  background: linear-gradient(135deg, #fff7ed, #ffffff);
-  border-radius: 28px;
-  padding: 2.5rem;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-  position: relative;
-}
-
-.patient-tag {
-  display: inline-block;
-  color: #f59e0b;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.patient-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-.patient-card ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.2rem;
-}
-
-.patient-card li {
-  margin-bottom: 0.5rem;
-  color: #374151;
-}
-
-.patient-note {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 1rem;
-  border-radius: 14px;
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-}
-
-.patient-cta {
-  padding: 0.8rem 2rem;
-  border-radius: 999px;
-  border: none;
-  font-weight: 700;
-  background: linear-gradient(90deg, #facc15, #f59e0b);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.patient-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(245, 158, 11, 0.3);
-}
-
-/* SINGLE IMAGE (Updated from compare-wrapper) */
-.single-image-wrapper {
-  height: 420px;
-  border-radius: 24px;
+.bac-section {
+  width: 100%;
+  padding: 72px 0;
+  background: #fffbee;
+  font-family: 'Poppins', sans-serif;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
   position: relative;
 }
 
-.single-image-wrapper img {
+/* subtle warm glow decorations */
+.bac-section::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -100px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(250,204,21,0.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+.bac-section::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; left: -80px;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.bac-container {
+  width: 100%;
+  padding: 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── HEADER — centered ── */
+.bac-header {
+  text-align: center;
+  margin-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.bac-eyebrow {
+  display: inline-block;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #d97706;
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.3);
+  padding: 5px 16px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.bac-title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  color: #1f2937;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin-bottom: 16px;
+}
+
+.bac-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  max-width: 500px;
+  line-height: 1.75;
+  text-align: center;
+}
+
+/* ── GRID ── */
+.bac-grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 44px;
+  align-items: stretch;
+}
+
+/* ── PATIENT CARD ── */
+.bac-card {
+  background: #ffffff;
+  border: 1.5px solid #f0e4a0;
+  border-radius: 24px;
+  padding: 32px 28px 28px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(245,158,11,0.1), 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.bac-card-top-bar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+  border-radius: 24px 24px 0 0;
+}
+
+.bac-card-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #d97706;
+  margin-bottom: 12px;
+}
+
+.bac-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.bac-name {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1f2937;
+  letter-spacing: -0.02em;
+}
+
+.bac-age {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #9ca3af;
+  background: #f3f4f6;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* detail rows */
+.bac-details {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.bac-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bac-detail-icon {
+  width: 36px;
+  height: 36px;
+  font-size: 17px;
+  background: #fef9ec;
+  border: 1px solid #fde68a;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bac-detail-label {
+  display: block;
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9ca3af;
+  line-height: 1;
+  margin-bottom: 3px;
+}
+
+.bac-detail-value {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* result box */
+.bac-result {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: 12px;
+  padding: 13px 15px;
+  margin-bottom: 14px;
+  font-size: 18px;
+}
+
+.bac-result p {
+  font-size: 0.82rem;
+  color: #4b3216;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.bac-consent {
+  font-size: 0.7rem;
+  color: #d1d5db;
+  margin-bottom: 22px;
+  line-height: 1.5;
+}
+
+/* CTA */
+.bac-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 6px 20px rgba(245,158,11,0.3);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.bac-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(245,158,11,0.45);
+}
+
+/* ── RIGHT COLUMN ── */
+.bac-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-self: stretch;
+}
+
+/* ── BEFORE / AFTER IMAGES ── */
+.bac-images {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* FIX: single row stretches to fill available height */
+  grid-template-rows: 1fr;
+  gap: 16px;
+  background: #ffffff;
+  border: 1.5px solid #f0e4a0;
+  border-radius: 24px;
+  padding: 18px;
+  box-shadow: 0 8px 40px rgb(245 158 11 / 58%), 0 2px 8px rgb(0 0 0 / 29%);
+  flex: 1;
+  min-height: 0;
+}
+
+/* FIX: removed aspect-ratio — boxes now fill the full grid row height */
+.bac-img-box {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f9fafb;
+  width: 100%;
+  height: 100%;
+  min-height: 180px; /* safety floor so boxes never collapse */
+}
+
+.bac-img-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  position: absolute;
+  inset: 0;
   transition: transform 0.6s ease;
 }
 
-.single-image-wrapper:hover img {
-  transform: scale(1.05);
+.bac-img-box:hover img {
+  transform: scale(1.04);
 }
 
-/* CONTROLS */
-.carousel-controls {
+/* before / after labels */
+.bac-img-label {
+  position: absolute;
+  bottom: 10px;
+  left: 5px;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 8px 20px;
+  border-radius: 7px;
+}
+
+.bac-img-label--before {
+  background: rgb(0, 0, 0);
+  color: #fff;
+}
+
+.bac-img-label--after {
+  background: #ffd700;
+  color: #000000;
+}
+
+/* verified badge */
+/* .bac-verified {
+  position: absolute;
+  bottom: 26px;
+  right: 26px;
   display: flex;
-  justify-content: flex-end;
-  gap: 0.8rem;
-  margin-top: 2.5rem;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid #fde68a;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #d97706;
+  box-shadow: 0 4px 12px rgba(245,158,11,0.15);
+  pointer-events: none;
+} */
+
+/* ── CONTROLS — centered ── */
+.bac-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 }
 
-.carousel-controls button {
+.bac-arrow {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 1px solid #e5e7eb;
+  border: 1.5px solid #e5e7eb;
   background: #fff;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.bac-arrow:hover {
+  background: #facc15;
+  border-color: #f59e0b;
+  color: #1f2937;
+  transform: scale(1.06);
+}
+
+.bac-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bac-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: none;
+  background: #d1d5db;
+  cursor: pointer;
+  padding: 0;
   transition: all 0.3s ease;
 }
 
-.carousel-controls button:hover {
+.bac-dot.active {
+  width: 26px;
+  border-radius: 5px;
   background: #f59e0b;
-  color: white;
-  border-color: #f59e0b;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .before-after-grid {
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Large desktop */
+@media (min-width: 1400px) {
+  .bac-container { padding: 0 200px; }
+  .bac-grid { grid-template-columns: 40% 60%; gap: 52px; }
+}
+
+/* Tablet landscape */
+@media (max-width: 1100px) {
+  .bac-grid { grid-template-columns: 40% 60%; gap: 32px; }
+}
+
+/* Tablet portrait — stack */
+@media (max-width: 900px) {
+  .bac-section { padding: 72px 0; }
+  .bac-container { padding: 0 32px; }
+
+  .bac-grid {
     grid-template-columns: 1fr;
+    gap: 28px;
   }
 
-  .single-image-wrapper {
-    height: 360px;
+  /* restore aspect-ratio on tablet/mobile since card no longer sets height */
+  .bac-img-box {
+    aspect-ratio: 16 / 10;
+    height: auto;
   }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .bac-section { padding: 56px 0; }
+  .bac-container { padding: 0 20px; }
+
+  .bac-header { margin-bottom: 40px; }
+  .bac-title { font-size: 1.6rem; }
+  .bac-subtitle { font-size: 0.9rem; }
+
+  .bac-images {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .bac-img-box {
+    aspect-ratio: 16 / 11;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .bac-card { padding: 26px 20px 22px; border-radius: 20px; }
+  .bac-name { font-size: 1.45rem; }
+  .bac-cta  { font-size: 0.85rem; padding: 13px 18px; }
+}
+
+/* Mobile small */
+@media (max-width: 420px) {
+  .bac-title { font-size: 1.35rem; }
+  .bac-img-box { aspect-ratio: 4 / 3; }
+  .bac-images  { gap: 8px; padding: 10px; }
+  .bac-img-label { font-size: 0.65rem; padding: 3px 8px; }
+  .bac-arrow { width: 36px; height: 36px; }
 }
