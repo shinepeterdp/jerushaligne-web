@@ -29,8 +29,18 @@ const patients = [
     procedure: "Teeth Alignment",
     duration: "10 months",
     date: "Jun 2025",
-    before: "/images/dental-aligns/before.jpg",
-    after: "/images/dental-aligns/after.jpg",
+    before: "/images/before-after/patient3-before.webp",
+    after: "/images/before-after/patient3-after.webp",
+    result: "Crowding resolved, confident smile restored",
+  },
+  {
+    name: "A. Joseph",
+    age: "19 yrs",
+    procedure: "Teeth Alignment",
+    duration: "10 months",
+    date: "Jun 2025",
+    before: "/images/before-after/patient4-before.webp",
+    after: "/images/before-after/patient3-after.webp",
     result: "Crowding resolved, confident smile restored",
   },
 ];
@@ -44,7 +54,7 @@ export default function BeforeAfterCarousel() {
 
   useEffect(() => {
     if (paused) return;
-    const t = setInterval(() => setActive((p) => (p + 1) % patients.length), 8000);
+    const t = setInterval(() => setActive((p) => (p + 1) % patients.length), 5000);
     return () => clearInterval(t);
   }, [paused]);
 
