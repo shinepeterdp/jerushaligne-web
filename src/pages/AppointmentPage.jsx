@@ -1,39 +1,14 @@
 import "../styles/PageHero.css";
 
-/**
- * PageHero — reusable hero/breadcrumb banner
- *
- * Props:
- *   eyebrow      — small label above title  e.g. "OUR GALLERY"
- *   title        — main bold heading (can contain <br/> via array)
- *   description  — paragraph text below title
- *   image        — right-side image src
- *   imageAlt     — alt text for image
- *   breadcrumbs  — array of { label, href }  last item = current page (no link)
- *
- * Usage:
- *   <PageHero
- *     eyebrow="BOOK APPOINTMENT"
- *     title={<>Book Your<br/>Appointment</>}
- *     description="Choose your nearest clinic and pick a time that works for you."
- *     image="/images/appointment-hero.webp"
- *     imageAlt="Happy patient"
- *     breadcrumbs={[
- *       { label: "Home", href: "/" },
- *       { label: "Appointment", href: null },
- *     ]}
- *   />
- */
-
 export default function PageHero({
   eyebrow = "BOOK APPOINTMENT",
   title = <>Book Your <br />Appointment</>,
-  description = "A look inside our world — from team celebrations and awareness drives to facility milestones and community events.",
+  description = "Make Your Visit With US",
   image = "/images/comparison/girl.webp",
   imageAlt = "Jerushaligne",
   breadcrumbs = [
     { label: "Home", href: "/" },
-    { label: "Gallery", href: null },
+    { label: "Book Appointment", href: null },
   ],
 }) {
    

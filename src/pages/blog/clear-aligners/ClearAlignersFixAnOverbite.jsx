@@ -149,7 +149,7 @@ export default function BlogPage() {
             </span>
           </div>
           <div className="blog-hero-img">
-            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1200&q=85" alt="Clear dental aligners for overbite treatment"/>
+            <img src="/images/blog/smile-banner.webp" alt="Clear dental aligners for overbite treatment"/>
             <div className="blog-hero-img-overlay" />
           </div>
         </div>
@@ -305,7 +305,7 @@ export default function BlogPage() {
           <section id="technology" className="blog-section">
             <h2 className="blog-h2">The Technology Behind Clear Aligner Tooth Movement</h2>
             <div className="blog-img-block">
-              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=80" alt="Orthodontist using 3D dental scanning technology"/>
+              <img src="/images/blog/aligner-technology.webp" alt="Orthodontist using 3D dental scanning technology"/>
             </div>
             <p>Clear aligners are based on forceful, slow force that helps in moving teeth into a more favorable position. 
               The aligner trays are individually customized based on digital images of the mouth of a patient. The following is the way the process usually works:</p>
@@ -328,7 +328,7 @@ export default function BlogPage() {
           <section id="types" className="blog-section">
             <h2 className="blog-h2">Different Types of Clear Aligner for Overbite</h2>
             <div className="blog-img-block">
-              <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=900&q=80" alt="Different types of dental retainers"/>
+              <img src="/images/blog/aligners-directed-by-dentist.webp" alt="Different types of dental retainers"/>
             </div>
             <p>Clear aligners systems are a number of treatments aimed to correct various alignment problems that are offered by modern orthodontics.</p>
             {[
