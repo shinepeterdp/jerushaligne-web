@@ -24,7 +24,7 @@
 
 .bl-root {
   background: var(--bg);
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   color: var(--dark);
   min-height: 100vh;
 }
@@ -74,7 +74,7 @@
 }
 
 .bl-hero-title {
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 40px;
   font-weight: 900;
   color: var(--dark);
@@ -113,7 +113,7 @@
   border: 1.5px solid rgba(255,255,255,0.9);
   border-radius: 100px;
   padding: 12px 44px 12px 42px;
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 0.9rem;
   color: var(--dark);
   outline: none;
@@ -189,7 +189,7 @@
   border: none;
   padding: 6px 14px;
   border-radius: 100px;
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--soft);
@@ -225,7 +225,7 @@
   border: 1.5px solid var(--border);
   border-radius: 100px;
   padding: 7px 14px;
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--mid);
@@ -260,7 +260,7 @@
   border: none;
   padding: 9px 12px;
   border-radius: 8px;
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 0.83rem;
   color: var(--mid);
   cursor: pointer;
@@ -371,7 +371,7 @@
 }
 
 .bl-card-title {
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 1rem;
   font-weight: 700;
   color: var(--dark);
@@ -425,7 +425,7 @@
   border: none;
   border-radius: 100px;
   padding: 10px 24px;
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
@@ -458,7 +458,7 @@
   border-radius: 10px;
   border: 1.5px solid var(--border);
   background: var(--white);
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--mid);

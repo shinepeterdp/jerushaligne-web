@@ -123,7 +123,7 @@
 }
 
 .main-title {
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 3rem;
   font-weight: 800;
   color: var(--dark-black);
@@ -314,7 +314,7 @@
 
 /* Review Text */
 .review-text {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 0.938rem;
   line-height: 1.8;
   color: var(--gray-700);
@@ -403,7 +403,7 @@
 }
 
 .google-badge-small span {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 0.813rem;
   font-weight: 600;
   color: var(--gray-600);

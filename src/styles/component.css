@@ -217,119 +217,178 @@
 
 
 
-
 /* ================= TREATMENT COMPARISON SECTION ================= */
-
 .compare-section {
-  padding: 5rem 1rem;
-  background: #fff9ec;
+  padding: 6rem 1.5rem;
+  background: #ffffff;
 }
 
 .compare-box {
-  max-width: 1100px;
+  max-width: 1400px;          /* ← increased from 1200px → cards wider feel */
   margin: 0 auto;
 }
 
 /* ================= HEADER ================= */
-
 .compare-title {
-  font-size: 32px;
+  font-size: 2.8rem;
   text-align: center;
-  font-weight: 800;
-  color: #111827;
+  font-weight: 900;
+  color: #000000;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.theme-highlight {
+  color: #f59e0b;
+  background: linear-gradient(to right, #f59e0b, #fbbf24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
 }
 
 .compare-subtitle {
-  margin-top: 0.5rem;
-  color: #000000;
+  font-size: 1.2rem;
   text-align: center;
+  color: #374151;
+  max-width: 900px;           /* subtitle-ஐயும் கொஞ்சம் wide ஆக்கினேன் */
+  margin: 0 auto 3.5rem;
 }
 
 /* ================= GRID ================= */
-
 .compare-grid {
-  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 3rem;                  /* ← gap increased from 2.5rem */
 }
 
 /* ================= CARD ================= */
-
 .compare-card {
-  background: #fffaf0;
-  border-radius: 22px;
-  padding: 30px 34px 0 34px;
-  text-align: left;
+  background: #ffe8b229;
+  border-radius: 24px;
+  padding: 2.5rem 2.8rem 0rem;
+  box-shadow: 0 11px 41px #ffd700;
+  transition: all 0.4s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  transition:
-    background 0.35s ease,
-    box-shadow 0.35s ease,
-    transform 0.35s ease;
-
-  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+  min-height: 520px;          
+  position: relative;
+  overflow: hidden;
 }
 
-/* Hover Gradient */
 .compare-card:hover {
-  background: linear-gradient(180deg, #ffe08a, #fff3c9);
-  transform: translateY(-8px);
-  box-shadow: 0 28px 55px rgba(0,0,0,0.18);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 1px 2px 32px #ffbb49;
 }
 
-/* ================= TEXT ================= */
+.compare-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(251, 191, 36, 0.05));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.compare-card:hover::after {
+  opacity: 1;
+}
+
+.compare-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Theme accents */
+.compare-card.premium h3,
+.compare-card.standard h3 {
+  color: #f59e0b;
+}
+
+.compare-card.basic h3 {
+  color: #ff0000;  /* red for contrast */
+}
 
 .compare-card h3 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 1.2rem;
-  color: #111827;
+  font-size: 1.6rem;       /* title size கொஞ்சம் பெருசு */
+  font-weight: 800;
+  margin-bottom: 1.8rem;
+  text-align: center;
 }
 
 .compare-card ul {
-  padding-left: 1rem;
-  margin-bottom: 1.8rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.2rem;
+  flex-grow: 1;
 }
 
 .compare-card li {
-  font-size: 0.95rem;
-  margin-bottom: 0.6rem;
-  color: #000;
-  line-height: 1.5;
+  font-size: 1.05rem;      /* text size கொஞ்சம் readable */
+  margin-bottom: 1.1rem;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.6;
+}
+
+.tick {
+  color: #10b981;
+  font-size: 1.5rem;
+  margin-right: 0.9rem;
+  font-weight: bold;
+}
+
+.cross {
+  color: #ef4444;
+  font-size: 1.4rem;
+  margin-right: 0.9rem;
 }
 
 /* ================= IMAGE ================= */
-
 .compare-image {
   width: 100%;
-  max-width: 180px;
-  margin: 0 auto;
+  max-width: 280px;
+  margin: 1.5rem auto 0;
   display: block;
-  transition: transform 0.35s ease;
+  border-radius: 12px;
 }
-
-
 
 /* ================= MOBILE ================= */
-
-@media (max-width: 900px) {
+@media (max-width: 1100px) {    /* breakpoint கொஞ்சம் மாற்றினேன் wide cards-க்கு suit ஆக */
   .compare-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .compare-card {
-    text-align: center;
-  }
-
-  .compare-card ul {
-    padding-left: 0;
-    list-style-position: inside;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
   }
 }
 
+@media (max-width: 768px) {
+  .compare-section {
+    padding: 4rem 1rem;
+  }
+  .compare-title {
+    font-size: 2.2rem;
+  }
+  .compare-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .compare-card {
+    text-align: center;
+    min-height: auto;
+    padding: 2.2rem 1.8rem 0rem;
+  }
+  .compare-card ul {
+    text-align: left;
+    max-width: 420px;       /* mobile-ல text wider */
+    margin: 0 auto 1.5rem;
+  }
+  .compare-image {
+    max-width: 220px;
+  }
+}
 
 
 
@@ -337,32 +396,72 @@
 
 .tech-section {
   padding: 4rem 1rem;
-  background: linear-gradient(180deg,#f2c316,#f5d04c);
+  background: linear-gradient(180deg, #f2c316, #f5d04c);
   display: flex;
   justify-content: center;
+  /* Prevent this section from ever causing horizontal overflow */
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 .tech-card {
-  max-width: 1200px;
+  max-width: 1300px;
   width: 100%;
   background: #f2c316;
   border-radius: 24px;
-  padding: 3.5rem;
+  padding: 5.5rem;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   align-items: center;
   gap: 3rem;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+  /* Ensure card never exceeds viewport */
+  box-sizing: border-box;
+}
+
+/* ================= NEON GLOW TITLE ================= */
+
+.neon-title {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+  text-align: left;
+  color: #000000;
+}
+
+.neon-title span {
+  position: relative;
+  color: #ffffff;
+  text-shadow:
+    0 0 5px #f59e0b,
+    0 0 10px #f59e0b,
+    0 0 20px #fbbf24,
+    0 0 30px #fbbf24,
+    0 0 40px #f59e0b,
+    0 0 50px #fbbf24;
+  animation: neon-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+  from {
+    text-shadow:
+      0 0 4px #f59e0b,
+      0 0 8px #f59e0b,
+      0 0 15px #fbbf24,
+      0 0 25px #fbbf24;
+  }
+  to {
+    text-shadow:
+      0 0 10px #f59e0b,
+      0 0 20px #f59e0b,
+      0 0 30px #fbbf24,
+      0 0 50px #fbbf24,
+      0 0 70px #f59e0b;
+  }
 }
 
 /* ================= CONTENT ================= */
-
-.tech-content h3 {
-  font-size: 32px;
-  font-weight: 800;
-  color: #000000;
-  margin-bottom: 1.2rem;
-}
 
 .tech-content p {
   color: #000000;
@@ -371,8 +470,6 @@
   margin-bottom: 1rem;
   max-width: 520px;
 }
-
-/* ================= BUTTON ================= */
 
 .tech-btn {
   margin-top: 1.5rem;
@@ -390,8 +487,6 @@
   background: #1f1600;
 }
 
-/* ================= IMAGE ================= */
-
 .tech-image {
   display: flex;
   justify-content: center;
@@ -406,24 +501,67 @@
 
 /* ================= RESPONSIVE ================= */
 
+/* Tablet */
 @media (max-width: 900px) {
   .tech-card {
     grid-template-columns: 1fr;
     padding: 2.5rem 2rem;
     text-align: center;
   }
-
   .tech-content p {
     margin-left: auto;
     margin-right: auto;
   }
-
   .tech-image img {
     max-width: 300px;
     margin-top: 2rem;
   }
+  .neon-title {
+    text-align: center;
+  }
 }
 
+/* Mobile — the key fixes for horizontal scroll */
+@media (max-width: 480px) {
+  .tech-section {
+    /* Remove side padding that adds to width */
+    padding: 2rem 0;
+  }
+
+  .tech-card {
+    /* No border-radius + flush edges prevents overflow */
+    border-radius: 0;
+    /* Tight padding — avoids pushing content beyond viewport */
+    padding: 2rem 1.2rem;
+    /* Guarantee card never wider than screen */
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    gap: 1.5rem;
+  }
+
+  .neon-title {
+    /* Scale down the large font on small screens */
+    font-size: clamp(1.6rem, 8vw, 2.2rem);
+    text-align: center;
+    word-break: break-word;
+  }
+
+  .tech-content p {
+    font-size: 0.88rem;
+    max-width: 100%;
+  }
+
+  .tech-image img {
+    max-width: 240px;
+    margin-top: 1rem;
+  }
+
+  .tech-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
 
 
 

@@ -11,7 +11,7 @@
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   position: relative;
 }
 
@@ -86,10 +86,10 @@
 /* ── TITLE ── */
 .hvs-title {
   font-family: 'Georgia', 'Playfair Display', serif;
-  font-size: clamp(2.4rem, 3.5vw, 3.6rem);
+  font-size: 70px;
   font-weight: 400;
   color: #1a1207;
-  line-height: 1.08;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0;
 }
@@ -124,13 +124,13 @@
   align-items: center;
   justify-content: center;
   padding: 13px 26px;
-  background: #000000;
+  background: #1a3a2a;
   color: #ffd700;
   border-radius: 10px;
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   letter-spacing: 0.02em;
   transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 4px 18px rgba(26,58,42,0.25);
@@ -148,7 +148,7 @@
   font-weight: 600;
   color: #44301a;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   transition: color 0.2s ease, gap 0.2s;
   display: inline-flex;
   align-items: center;
@@ -244,26 +244,18 @@
 }
 
 /* ══════════════════════════════
-   ANIMATIONS
+   ANIMATIONS — handled by Framer Motion AnimatePresence
+   CSS classes kept for fallback only
 ══════════════════════════════ */
 
-.hvs-fade-in {
-  animation: hvs-fadeIn 0.5s ease forwards;
+/* hvs-inner-stack: absolute so AnimatePresence exit+enter overlap cleanly */
+.hvs-inner-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  /* Removed position:absolute — let layout flow naturally with AnimatePresence mode=wait */
 }
-.hvs-fade-out {
-  animation: hvs-fadeOut 0.3s ease forwards;
-}
-.hvs-slide-in {
-  animation: hvs-slideIn 0.55s cubic-bezier(0.22,1,0.36,1) forwards;
-}
-.hvs-slide-out {
-  animation: hvs-slideOut 0.3s ease forwards;
-}
-
-@keyframes hvs-fadeIn  { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes hvs-fadeOut { from { opacity: 1; } to { opacity: 0; transform: translateY(-8px); } }
-@keyframes hvs-slideIn { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes hvs-slideOut{ from { opacity: 1; } to { opacity: 0; transform: translateY(-12px); } }
 
 /* ══════════════════════════════
    RIGHT — VIDEO PANEL
@@ -298,8 +290,60 @@
   pointer-events: none;
 }
 
+/* Floating badge */
+.hvs-badge {
+  position: absolute;
+  bottom: 36px;
+  left: 28px;
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 16px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  z-index: 5;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
 
+.hvs-badge-icon { font-size: 26px; }
 
+.hvs-badge strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: 'Object Sans', sans-serif;
+}
+
+.hvs-badge p {
+  font-size: 11px;
+  margin: 0;
+  opacity: 0.8;
+  font-family: 'Object Sans', sans-serif;
+}
+
+/* Corner certification tag */
+.hvs-corner-tag {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  background: rgba(255,215,0,0.92);
+  color: #1a1207;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  z-index: 5;
+  backdrop-filter: blur(8px);
+  font-family: 'Object Sans', sans-serif;
+  letter-spacing: 0.04em;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
 
 /* ══════════════════════════════
    RESPONSIVE
@@ -313,7 +357,7 @@
 
 /* Tablet landscape */
 @media (max-width: 1100px) {
-  .hvs-left-inner { padding: 48px 32px 48px 36px; }
+  .hvs-left-inner { padding: 160px 32px 48px 36px; }
 }
 
 /* Tablet portrait — stack vertically, video on top */
@@ -342,6 +386,11 @@
   .hvs-right { height: 65vw; }
   .hvs-left-inner { padding: 36px 20px; }
   .hvs-title { font-size: 2.2rem; }
+  .hvs-badge { bottom: 16px; left: 16px; padding: 10px 14px; }
+  .hvs-badge-icon { font-size: 20px; }
+  .hvs-badge strong { font-size: 12px; }
+  .hvs-badge p { font-size: 10px; }
+  .hvs-corner-tag { top: 16px; right: 16px; font-size: 10px; padding: 6px 12px; }
   .hvs-btn-primary { padding: 12px 22px; font-size: 12.5px; }
   .hvs-progress-wrap { min-width: 40px; }
 }
@@ -366,23 +415,12 @@
   display: block;
 }
 
-/* Inner stack — flex column for stagger children */
-.hvs-inner-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
-}
-
 /* Ensure right panel clips the scaled video correctly */
 .hvs-right {
   overflow: hidden;
 }
 
-/* Left inner needs will-change for smooth spring */
-.hvs-left-inner {
-  will-change: transform, opacity;
-}
+
 
 /* Blobs will-change */
 .hvs-blob {
@@ -557,3 +595,15 @@
   .hvs-vc-time { font-size: 9.5px; }
   .hvs-vc-btn  { width: 26px; height: 26px; }
 }
+
+/* ══════════════════════════════
+   ANIMATIONS — driven by Framer Motion AnimatePresence
+   Old CSS classes removed; blur+translate handled in JS variants
+══════════════════════════════ */
+
+/* Left inner clips overflowing exit/enter elements */
+.hvs-left-inner {
+  overflow: hidden;
+}
+
+/* Stack fills the inner container */

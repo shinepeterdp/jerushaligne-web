@@ -358,7 +358,7 @@
   background: #080808;
   padding: 100px 0 120px;
   overflow: hidden;
-  font-family: 'montserrat', sans-serif;
+  font-family: 'Object Sans', sans-serif;
 }
 
 /* ===== BLOBS ===== */
@@ -410,7 +410,7 @@
 }
 
 .reviews-title {
-  font-family: 'montserrat', serif;
+  font-family: 'Object Sans', serif;
   font-size: 45px;
   font-weight: 700;
   color: #fff;

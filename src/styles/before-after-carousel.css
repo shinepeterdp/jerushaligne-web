@@ -9,7 +9,7 @@
   width: 100%;
   padding: 72px 0;
   background: #fffbee;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   overflow: hidden;
   position: relative;
 }
@@ -53,12 +53,12 @@
 
 .bac-eyebrow {
   display: inline-block;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #d97706;
-  background: rgba(245,158,11,0.1);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: capitalize;
+  color: #92400e;
+  background: #fde68a;
   border: 1px solid rgba(245,158,11,0.3);
   padding: 5px 16px;
   border-radius: 999px;
@@ -66,10 +66,10 @@
 }
 
 .bac-title {
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: 38px;
   font-weight: 800;
   color: #1f2937;
-  line-height: 1.18;
+  line-height: 1.3;
   letter-spacing: -0.025em;
   margin-bottom: 16px;
 }
@@ -230,7 +230,7 @@
   text-decoration: none;
   border: none;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   box-shadow: 0 6px 20px rgba(245,158,11,0.3);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }

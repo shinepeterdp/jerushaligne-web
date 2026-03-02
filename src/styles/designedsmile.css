@@ -171,7 +171,7 @@
 }
 
 .ca-card-title {
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: 0.95rem;
   font-weight: 800;
   color: #1c0f00;
@@ -222,7 +222,7 @@
   bottom: 4%;
   left: 50%;
   transform: translateX(-50%);
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Object Sans', sans-serif;
   font-size: clamp(56px, 9vw, 110px);
   font-weight: 900;
   white-space: nowrap;

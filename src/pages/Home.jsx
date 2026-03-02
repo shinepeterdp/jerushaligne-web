@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div
       className="min-h-screen bg-gray-50 text-gray-800"
-      style={{ fontFamily: "'montserrat', sans-serif" }}
+      style={{ fontFamily: "'Object Sans', sans-serif" }}
     >
       <main>
         {/* Hero already animated internally */}
@@ -85,18 +85,6 @@ export default function Home() {
           <GallerySection />
         </motion.div>
 
-
-         {/* Our Clinics */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          <OurClinics />
-        </motion.div>
-     
-
         {/* Events */}
         <motion.div
           variants={fadeUp}
@@ -106,6 +94,18 @@ export default function Home() {
         >
           <EventsCarousel />
         </motion.div>
+
+        {/* Our Clinics */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <OurClinics />
+        </motion.div>
+
+
       </main>
 
           

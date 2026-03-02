@@ -7,15 +7,14 @@ const JN_LINKS = [
   {
     label: "Jerushaligne's History", href: "#",
     sub: [
-      { label: "The Formation",     href: "/story-of-jerushaligne" },
-      { label: "Gallery",   href: "/gallery-events" },
-      // { label: "Meet the Team", href: "/about/team" },
+      { label: "The Formation", href: "/story-of-jerushaligne" },
+      { label: "Gallery",       href: "/gallery-events" },
     ],
   },
   {
     label: "Aligners", href: "#",
     sub: [
-      { label: "Clear Aligners",  href: "/clear-aligners" },
+      { label: "Clear Aligners",    href: "/clear-aligners" },
       { label: "Aligner Reatiners", href: "/aligner-retainers" },
     ],
   },
@@ -27,31 +26,26 @@ const JN_LINKS = [
       { label: "Trichy",      href: "/outlets/trichy-outlet" },
       { label: "Chennai",     href: "/outlets/chennai-outlet" },
       { label: "Dubai",       href: "#" },
-      // { label: "Australia",   href: "/outlets/australia-outlet" },
     ],
   },
   { label: "Blog",    href: "/blog" },
   { label: "Contact", href: "/contact-us" },
 ];
 
-/* Location call links for top strip */
 const JN_LOCATIONS = [
-  { city: "Kanyakumari", phone: "+91 98765 43210", href: "tel:+919876543210" },
-  { city: "Trichy",      phone: "+91 98765 43211", href: "tel:+919876543211" },
-  { city: "Chennai",     phone: "+91 98765 43212", href: "tel:+919876543212" },
-  { city: "Dubai",       phone: "COMING SOON", href: "/" },
-  // { city: "Australia",   phone: "+61 4 1234 5678",  href: "tel:+61412345678" },
+  { city: "Kanyakumari", phone: "+91 94891 60055", href: "tel:+919489160055" },
+  { city: "Trichy",      phone: "+91 94891 60011", href: "tel:+919489160011" },
+  { city: "Chennai",     phone: "+91 97510 10107", href: "tel:+919751010107" },
+  { city: "Dubai",          href: "/" },
 ];
 
 export default function JNavbar() {
   const [jn_visible,  setJnVisible]  = useState(true);
   const [jn_scrolled, setJnScrolled] = useState(false);
   const [jn_mob,      setJnMob]      = useState(false);
-  const [jn_drop,     setJnDrop]     = useState(null);
   const [jn_mobDrop,  setJnMobDrop]  = useState(null);
   const [jn_active,   setJnActive]   = useState("/");
-  const jn_lastY  = useRef(0);
-  const jn_navRef = useRef(null);
+  const jn_lastY = useRef(0);
 
   /* scroll hide/show */
   useEffect(() => {
@@ -66,13 +60,6 @@ export default function JNavbar() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  /* close desktop dropdown on outside click */
-  useEffect(() => {
-    const fn = (e) => { if (!jn_navRef.current?.contains(e.target)) setJnDrop(null); };
-    document.addEventListener("mousedown", fn);
-    return () => document.removeEventListener("mousedown", fn);
-  }, []);
-
   useEffect(() => { setJnActive(window.location.pathname); }, []);
 
   useEffect(() => {
@@ -82,6 +69,10 @@ export default function JNavbar() {
 
   const jn_mobToggle = (k) => setJnMobDrop((p) => (p === k ? null : k));
 
+  /* Check if any sub-item of this link is currently active */
+  const jn_subActive = (link) =>
+    link.sub?.some((s) => s.href !== "#" && jn_active === s.href);
+
   return (
     <>
       <header className={[
@@ -90,18 +81,16 @@ export default function JNavbar() {
         jn_visible  ? "jn-show" : "jn-hide",
       ].join(" ")}>
 
-        {/* ══ ROW 1 — logo + location call links + CTA ══ */}
+        {/* ══ ROW 1 ══ */}
         <div className="jn-row1">
           <div className="jn-row1-in">
 
-            {/* Logo */}
             <a href="/" className="jn-logo">
               <img src="/images/logo/jerushaligne-logo.png" alt="Jerushaligne"
                 className="jn-logo-img"
                 onError={(e) => { e.target.style.display = "none"; }} />
             </a>
 
-            {/* Location call strip */}
             <div className="jn-locations">
               {JN_LOCATIONS.map((loc) => (
                 <a key={loc.city} href={loc.href} className="jn-loc-link">
@@ -124,14 +113,14 @@ export default function JNavbar() {
           </div>
         </div>
 
-        {/* ══ ROW 2 — nav links, pure CSS hover dropdown ══ */}
+        {/* ══ ROW 2 — CSS hover dropdowns ══ */}
         <nav className="jn-row2" aria-label="Main navigation">
           <div className="jn-row2-in">
             {JN_LINKS.map((link) => (
               <div key={link.label} className={`jn-item${link.sub ? " jn-item--has-sub" : ""}`}>
                 {link.sub ? (
                   <>
-                    <button className={`jn-link jn-link--btn ${jn_active.startsWith(link.href) ? "jn-link--on" : ""}`}>
+                    <button className={`jn-link jn-link--btn ${jn_subActive(link) ? "jn-link--on" : ""}`}>
                       {link.label}
                       <svg className="jn-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="11" height="11">
                         <path d="M6 9l6 6 6-6"/>
@@ -141,14 +130,15 @@ export default function JNavbar() {
                       <div className="jn-drop-tip" />
                       {link.sub.map((s) => (
                         <a key={s.label} href={s.href}
-                          className={`jn-drop-row ${jn_active === s.href ? "jn-drop-row--on" : ""}`}>
+                          className={`jn-drop-row ${s.href !== "#" && jn_active === s.href ? "jn-drop-row--on" : ""}`}>
                           <span className="jn-drop-dot" />{s.label}
                         </a>
                       ))}
                     </div>
                   </>
                 ) : (
-                  <a href={link.href} className={`jn-link ${jn_active === link.href ? "jn-link--on" : ""}`}>
+                  <a href={link.href}
+                    className={`jn-link ${jn_active === link.href ? "jn-link--on" : ""}`}>
                     {link.label}
                   </a>
                 )}
@@ -158,7 +148,7 @@ export default function JNavbar() {
         </nav>
       </header>
 
-      {/* ══ OVERLAY + DRAWER — portal on body ══ */}
+      {/* ══ PORTAL: OVERLAY + DRAWER ══ */}
       {createPortal(
         <>
           <div className={`jn-overlay ${jn_mob ? "jn-overlay--in" : ""}`}
@@ -167,13 +157,14 @@ export default function JNavbar() {
           <div className={`jn-drawer ${jn_mob ? "jn-drawer--in" : ""}`}>
 
             <div className="jn-dhead">
-              {/* Logo */}
-            <a href="/" className="jn-logo">
-              <img src="/images/logo/logo-white.png" alt="Jerushaligne"
-                className="jn-logo-img"
-                onError={(e) => { e.target.style.display = "none"; }} />
-            </a>
-              <button className="jn-dclose" onClick={() => { setJnMob(false); setJnMobDrop(null); }} aria-label="Close">
+              <a href="/" className="jn-logo" onClick={() => setJnMob(false)}>
+                <img src="/images/logo/logo-white.png" alt="Jerushaligne"
+                  className="jn-logo-img"
+                  onError={(e) => { e.target.style.display = "none"; }} />
+              </a>
+              <button className="jn-dclose"
+                onClick={() => { setJnMob(false); setJnMobDrop(null); }}
+                aria-label="Close">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" width="17" height="17">
                   <path d="M18 6L6 18M6 6l12 12"/>
                 </svg>
@@ -186,7 +177,7 @@ export default function JNavbar() {
                   {link.sub ? (
                     <>
                       <button
-                        className={`jn-dlink jn-dlink--btn ${jn_active.startsWith(link.href) ? "jn-dlink--on" : ""}`}
+                        className={`jn-dlink jn-dlink--btn ${jn_subActive(link) ? "jn-dlink--on" : ""}`}
                         onClick={() => jn_mobToggle(link.label)}>
                         {link.label}
                         <svg className={`jn-chev ${jn_mobDrop === link.label ? "jn-chev--flip" : ""}`}
@@ -198,7 +189,7 @@ export default function JNavbar() {
                         <div className="jn-dsub">
                           {link.sub.map((s) => (
                             <a key={s.label} href={s.href}
-                              className={`jn-dsub-link ${jn_active === s.href ? "jn-dsub-link--on" : ""}`}
+                              className={`jn-dsub-link ${s.href !== "#" && jn_active === s.href ? "jn-dsub-link--on" : ""}`}
                               onClick={() => { setJnMob(false); setJnMobDrop(null); }}>
                               <span className="jn-drop-dot" />{s.label}
                             </a>
@@ -219,12 +210,9 @@ export default function JNavbar() {
             </nav>
 
             <div className="jn-dfoot">
-              {/* Book Appointment */}
               <a href="/book-appointment" className="jn-dbtn-book" onClick={() => setJnMob(false)}>
                 Book Appointment
               </a>
-
-              {/* Location call grid */}
               <div className="jn-dloc-grid">
                 {JN_LOCATIONS.map((loc) => (
                   <a key={loc.city} href={loc.href} className="jn-dloc-btn" onClick={() => setJnMob(false)}>
